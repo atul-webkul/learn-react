@@ -23,7 +23,7 @@ class Person extends Component{
 
     render() {
         return (
-        <div className="personBox">
+        <div className="personBox" onClick={this.props.remove}>
             <h3>Name:{this.props.name}</h3>
             <h3>Age:{this.props.age}</h3>
 
