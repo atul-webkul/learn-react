@@ -1,18 +1,44 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Register from "./components/Register"
+import Greet from "./components/Greet"
 
-class App extends Component {
+class App extends Component{
+constructor(props) {
+  super(props)
+
+  this.state = {
+     isRegister: false,
+     name:null,
+     email:null,
+     password:null,
+     showPass:false
+
+  };
+}
+
+registrationHandler = (event) => {
+  
+  event.preventDefault();
+  let name = event.target.name.value;
+  let email = event.target.email.value;
+  let password = event.target.password.value;
+  this.setState({name,email,password,isRegister:true},
+    () => {
+       console.log(this.state)
+    }
+    );
+}
+
+showPasswordHandler = () => {
+  this.setState({showPass: !this.state.showPass})
+
+}
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {this.state.isRegister ? <Greet name={this.state.name} email={this.state.email}> </Greet>:<Register submit={this.registrationHandler} showPass={this.state.showPass} click={this.showPasswordHandler}></Register>}
       </div>
     );
   }
