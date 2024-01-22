@@ -3,6 +3,7 @@ import "./App.css";
 import Register from "./components/Register"
 import Greet from "./components/Greet"
 
+
 class App extends Component{
 constructor(props) {
   super(props)
@@ -18,7 +19,7 @@ constructor(props) {
 }
 
 registrationHandler = (event) => {
-  
+
   event.preventDefault();
   let name = event.target.name.value;
   let email = event.target.email.value;
