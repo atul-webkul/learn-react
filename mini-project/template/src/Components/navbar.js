@@ -13,10 +13,11 @@ function navbar(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto py-4 py-lg-0">
-                        <Link to= "about" name="about">About</Link>
-                        <Link to= "/" name="home" >Home</Link>
-                        <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-                        <li className="nav-item"><a className="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                        <Link to="about" name="about"><div className="nav-link px-lg-3 py-3 text-white" >About</div></Link>
+                        <Link to="/" name="home" ><div className="nav-link px-lg-3 py-3 text-white">Home</div></Link>
+                        <Link to="/samplepage" name="Sample post" ><div className="nav-link px-lg-3 py-3 text-white">Sample Post</div></Link>
+                        <Link to="/contact" name="Contact" ><div className="nav-link px-lg-3 py-3 text-white">Contact</div></Link>
+                        <Link name="Login" onClick={props.login}><div className="nav-link px-lg-3 py-3 text-white">{props.status ? "Logout" : "LogIn"}</div></Link>
                     </ul>
                 </div>
             </div>
