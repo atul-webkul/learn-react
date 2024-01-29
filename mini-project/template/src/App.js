@@ -13,7 +13,7 @@ import { Component } from 'react';
 class App extends Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
        auth:0
     }
@@ -29,7 +29,10 @@ class App extends Component {
                 <Routes>
                 <Route path='/' element={<><Header name={"Homepage"}/><Homepage /> </>}  />
                 <Route path='about' element={<><Header name={"About"}/> <About /></>}  />
-                <Route path='samplepage' element={<><Header name={"Sample page"}/> <Samplepage /></>}  />
+              <Route path='samplepage' element={
+                  
+                  <><Header name={"Sample page"} /> <Samplepage /></>}
+              />
                 <Route path='contact' element={<><Header name={"Contact"}/> <Contact /></>}  />
                 <Route path='*' element={<Error />}  />
                 </Routes>

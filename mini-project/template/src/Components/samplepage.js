@@ -5,3 +5,4 @@ export default function samplepage() {
     <div>samplepage</div>
   )
 }
+
